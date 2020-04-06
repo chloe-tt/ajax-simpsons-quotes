@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Ajax quest challenge</title>
+  <title>Ajax quest challenge chloe</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel='stylesheet' href='https://unpkg.com/bulma@0.7.5/css/bulma.min.css'>
@@ -18,7 +18,7 @@
 <body>
   <section class="section">
     <div class="container">
-      <h1 class="title">Chuck Norris Jokes</h1>
+      <h1 class="title">Chuck Norris Jokes chloe</h1>
       <p>Reload for another joke!</p>
 
       <div class="content" id="chuck-norris">
@@ -30,7 +30,28 @@
   <!-- We need to load axios first! -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
   <script>
+   // This function loads pokemon data from the Pokemon API
+function fetchPokemonJSON() {
+  // Feel free to download this HTML and edit it, to use another Pokemon ID
+  const pokemonId = 1;
+  const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
+  axios.get(url)
+    .then(function(response) {
+      return response.data; // response.data instead of response.json() with fetch
+    })
+    .then(function(pokemon) {
+      console.log('data decoded from JSON:', pokemon);
 
+      // Build a block of HTML
+      const pokemonHtml = `
+        <p><strong>${quote.quote}</strong></p>
+        <img src="${quote.image}" />
+      `;
+      document.querySelector('#chuck-norris').innerHTML = pokemonHtml;
+    });
+}
+
+fetchPokemonJSON();
   </script>
 </body>
 
