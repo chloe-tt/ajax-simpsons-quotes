@@ -19,7 +19,8 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Chuck Norris Jokes chloe</h1>
-      <p>Reload for another joke!</p>
+      <button id="myBtn">Generate another quote</button>
+      <p id="demo"></p>
 
       <div class="content" id="chuck-norris">
       </div>
@@ -55,6 +56,11 @@ function refreshPage(){
   fetchSimpsonsJSON();
 }
  </script>
+ <script>
+  document.getElementById("myBtn").addEventListener("click", function(){
+    document.getElementById("demo").innerHTML = fetchSimpsonsJSON();
+  });
+  </script>
 </body>
 
 </html>
